@@ -1,0 +1,74 @@
+@import "../../styles/colors";
+@import "../../styles/mixins";
+
+.login {
+  padding: 2rem;
+  background-color: $primary-main;
+
+  .container {
+    @include flexbox(row, center, center);
+    height: 100vh;
+  }
+
+  &__wrapper {
+    padding: 4em;
+    max-width: 90rem;
+    width: 100%;
+    background-color: $white;
+    border-radius: 3px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(34rem, 1fr));
+    align-items: center;
+    grid-gap: 6em;
+  }
+
+  &__content {
+    .form {
+      @include flexbox(column, center, center);
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        color: $primary-main;
+      }
+
+      &__password {
+        position: relative;
+        span {
+          position: absolute;
+          right: 8px;
+          top: 10px;
+          cursor: pointer;
+        }
+      }
+
+      &__email,
+      &__password,
+      &__submit,
+      &__google {
+        display: flex;
+        width: 100%;
+
+        &:not(:last-child) {
+          margin-bottom: 1.6em;
+        }
+
+        input {
+          background-color: lighten($primary-main, 30%);
+        }
+
+        input,
+        button {
+          flex: 1;
+          border-radius: 4rem;
+          padding: 1.6rem;
+          font-size: 1.5rem;
+        }
+      }
+
+      &__option {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

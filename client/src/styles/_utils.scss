@@ -1,0 +1,66 @@
+@import "./colors";
+@import "./variables";
+@import "./mixins";
+
+.primary {
+  background-color: $primary-main;
+  color: $white;
+  font-size: 1.5em;
+  font-weight: map-get($font-weight, bold);
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.secondary {
+  @include flexbox(row, center, center);
+  padding: 1.2rem !important;
+  color: $primary-main;
+  box-shadow: 0 4px 4px rgba(17, 17, 17, 0.171);
+  span {
+    &:first-child {
+      margin-right: 2rem;
+    }
+
+    &:last-child {
+      font-size: 1.5rem;
+      font-weight: map-get($font-weight, bold);
+    }
+  }
+}
+
+.mainBtn {
+  background-color: transparent;
+  font-weight: map-get($font-weight, bold);
+  font-size: 1.6rem;
+  @include flexbox(row, center, center);
+  color: $primary-main;
+}
+
+.submit {
+  background-color: $primary-main;
+  padding: 1rem 2rem;
+  border-radius: 3px;
+  color: $white;
+  font-weight: map-get($font-weight, bold);
+}
+
+.btnAdd {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  background: $primary-main;
+}
+
+.logout {
+  font-size: 1.5rem;
+  background-color: transparent;
+  padding: 0.4rem;
+}
+
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+}

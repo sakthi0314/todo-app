@@ -1,0 +1,81 @@
+@import "../../styles/variables";
+@import "../../styles/colors";
+@import "../../styles/mixins";
+
+.home {
+  padding: 0 2rem;
+
+  .container {
+    @include flexbox(row, center, center);
+
+    .wrapper {
+      margin: 6rem 0;
+      max-width: 60rem;
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(17, 17, 17, 0.164);
+
+      &__header {
+        background-color: $primary-main;
+        padding: 2em;
+        @include flexbox(row, space-between, center);
+
+        .date__colone {
+          @include flexbox(row, center, center);
+
+          h1 {
+            font-size: 6rem;
+            margin-right: 1rem;
+            color: rgb(247, 215, 39);
+          }
+
+          &--detail {
+            color: $white;
+
+            strong {
+              font-size: 1.8rem;
+            }
+
+            p {
+              margin-top: 0.4rem;
+              font-size: 1.4rem;
+              font-weight: map-get($font-weight, medium);
+            }
+          }
+        }
+
+        .date__coltwo {
+          @include flexbox(row, center, center);
+          &--profile {
+            height: 4rem;
+            width: 4rem;
+            border-radius: 50%;
+            background-color: rgb(255, 255, 255);
+            overflow: hidden;
+            @include flexbox(row, center, center);
+            font-size: 2rem;
+            margin-right: 2rem;
+          }
+        }
+      }
+
+      &__body {
+        background-color: $white;
+        padding: 3em 2em;
+
+        .content {
+          background-color: $white;
+          box-shadow: 0 1px 2px rgba(17, 17, 17, 0.096);
+          margin-top: -4rem;
+          padding: 2rem;
+
+          &__add {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
+  }
+}
